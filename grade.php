@@ -17,7 +17,7 @@
 /**
  * Redirect the user to the appropriate submission related page.
  *
- * @package    mod_rumbletalk_chat
+ * @package    mod_rumbletalkchat
  * @copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  

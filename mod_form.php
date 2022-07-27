@@ -15,12 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * The main rumbletalk_chat configuration form
+ * The main rumbletalkchat configuration form
  *
  * It uses the standard core Moodle formslib. For more info about them, please
  * visit: http://docs.moodle.org/en/Development:lib/formslib.php
  *
- * @package    mod_rumbletalk_chat
+ * @package    mod_rumbletalkchat
  * @copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -32,11 +32,11 @@ require_once($CFG->dirroot.'/course/moodleform_mod.php');
 /**
  * Module instance settings form
  *
- * @package    mod_rumbletalk_chat
+ * @package    mod_rumbletalkchat
  * @copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class mod_rumbletalk_chat_mod_form extends moodleform_mod {
+class mod_rumbletalkchat_mod_form extends moodleform_mod {
 
     /**
      * Defines forms elements
@@ -50,7 +50,7 @@ class mod_rumbletalk_chat_mod_form extends moodleform_mod {
         $mform->addElement('header', 'general', get_string('general', 'form'));
 
         // Adding the standard "name" field.
-        $mform->addElement('text', 'name', get_string('rumbletalk_chatname', 'rumbletalk_chat'), array('size' => '64'));
+        $mform->addElement('text', 'name', get_string('rumbletalkchatname', 'rumbletalkchat'), array('size' => '64'));
         if (!empty($CFG->formatstringstriptags)) {
             $mform->setType('name', PARAM_TEXT);
         } else {
@@ -58,14 +58,14 @@ class mod_rumbletalk_chat_mod_form extends moodleform_mod {
         }
         $mform->addRule('name', null, 'required', null, 'client');
         $mform->addRule('name', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
-        $mform->addHelpButton('name', 'rumbletalk_chatname', 'rumbletalk_chat');
+        $mform->addHelpButton('name', 'rumbletalkchatname', 'rumbletalkchat');
 
         // Adding the standard "intro" and "introformat" fields.
         $this->standard_intro_elements();
 
-        // Add a specific mod_rumbletalk_chat field - title.
+        // Add a specific mod_rumbletalkchat field - title.
         $mform->addElement('text', 'title',
-                get_string('title', 'mod_rumbletalk_chat'));
+                get_string('title', 'mod_rumbletalkchat'));
         $mform->setType('title', PARAM_TEXT);
 
         // Add standard grading elements.

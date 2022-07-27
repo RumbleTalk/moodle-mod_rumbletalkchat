@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file keeps track of upgrades to the rumbletalk_chat module
+ * This file keeps track of upgrades to the rumbletalkchat module
  *
  * Sometimes, changes between versions involve alterations to database
  * structures and other major things that may break installations. The upgrade
@@ -24,7 +24,7 @@
  * it cannot do itself, it will tell you what you need to do.  The commands in
  * here will all be database-neutral, using the functions defined in DLL libraries.
  *
- * @package    mod_rumbletalk_chat
+ * @package    mod_rumbletalkchat
  * @copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -32,12 +32,12 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Execute rumbletalk_chat upgrade from the given old version
+ * Execute rumbletalkchat upgrade from the given old version
  *
  * @param int $oldversion
  * @return bool
  */
-function xmldb_rumbletalk_chat_upgrade($oldversion) {
+function xmldb_rumbletalkchat_upgrade($oldversion) {
 
     return true;
 }

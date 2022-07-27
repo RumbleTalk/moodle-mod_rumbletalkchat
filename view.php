@@ -15,55 +15,55 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Prints a particular instance of rumbletalk_chat
+ * Prints a particular instance of rumbletalkchat
  *
- * @package    mod_rumbletalk_chat
+ * @package    mod_rumbletalkchat
  * @copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-use mod_rumbletalk_chat\output\view;
+use mod_rumbletalkchat\output\view;
 require_once('../../config.php');
 
 // We need the course module id (id) or
-// the rumbletalk_chat instance id (n).
+// the rumbletalkchat instance id (n).
 $id = optional_param('id', 0, PARAM_INT);
 $n  = optional_param('n', 0, PARAM_INT);
 
 if ($id) {
-    $cm = get_coursemodule_from_id('rumbletalk_chat', $id, 0, false,
+    $cm = get_coursemodule_from_id('rumbletalkchat', $id, 0, false,
             MUST_EXIST);
     $course = $DB->get_record('course',
             array('id' => $cm->course), '*', MUST_EXIST);
-    $rumbletalk_chat = $DB->get_record('rumbletalk_chat',
+    $rumbletalkchat = $DB->get_record('rumbletalkchat',
             array('id' => $cm->instance), '*', MUST_EXIST);
 } else if ($n) {
-    $rumbletalk_chat = $DB->get_record('rumbletalk_chat', array('id' => $n), '*',
+    $rumbletalkchat = $DB->get_record('rumbletalkchat', array('id' => $n), '*',
             MUST_EXIST);
     $course = $DB->get_record('course',
-            array('id' => $rumbletalk_chat->course), '*', MUST_EXIST);
-    $cm = get_coursemodule_from_instance('rumbletalk_chat', $rumbletalk_chat->id,
+            array('id' => $rumbletalkchat->course), '*', MUST_EXIST);
+    $cm = get_coursemodule_from_instance('rumbletalkchat', $rumbletalkchat->id,
             $course->id, false, MUST_EXIST);
 }
 
 // Print the page header.
-$PAGE->set_url('/mod/rumbletalk_chat/view.php', array('id' => $cm->id));
+$PAGE->set_url('/mod/rumbletalkchat/view.php', array('id' => $cm->id));
 
 require_login($course, true, $cm);
 
 // Set the page information.
-$PAGE->set_title(format_string($rumbletalk_chat->name));
+$PAGE->set_title(format_string($rumbletalkchat->name));
 $PAGE->set_heading(format_string($course->fullname));
 
 // Check for intro page content.
-if (!$rumbletalk_chat->intro) {
-    $rumbletalk_chat->intro = '';
+if (!$rumbletalkchat->intro) {
+    $rumbletalkchat->intro = '';
 }
 // Start output to browser.
 echo $OUTPUT->header();
 
 // Call classes/output/view and view.mustache to create output.
-echo $OUTPUT->render(new view($rumbletalk_chat, $cm->id));
+echo $OUTPUT->render(new view($rumbletalkchat, $cm->id));
 
 // End output to browser.
 echo $OUTPUT->footer();

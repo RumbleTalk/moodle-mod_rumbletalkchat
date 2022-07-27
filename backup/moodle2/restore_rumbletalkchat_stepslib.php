@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Define all the restore steps that will be used by the restore_rumbletalk_chat_activity_task
+ * Define all the restore steps that will be used by the restore_rumbletalkchat_activity_task
  *
- * @package   mod_rumbletalk_chat
+ * @package   mod_rumbletalkchat
  * @category  backup
  * @copyright 2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,14 +25,14 @@
  */
 
 /**
- * Structure step to restore one rumbletalk_chat activity
+ * Structure step to restore one rumbletalkchat activity
  *
- * @package   mod_rumbletalk_chat
+ * @package   mod_rumbletalkchat
  * @category  backup
  * @copyright 2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class restore_rumbletalk_chat_activity_structure_step extends restore_activity_structure_step {
+class restore_rumbletalkchat_activity_structure_step extends restore_activity_structure_step {
 
     /**
      * Defines structure of path elements to be processed during the restore
@@ -42,7 +42,7 @@ class restore_rumbletalk_chat_activity_structure_step extends restore_activity_s
     protected function define_structure() {
 
         $paths = array();
-        $paths[] = new restore_path_element('rumbletalk_chat', '/activity/rumbletalk_chat');
+        $paths[] = new restore_path_element('rumbletalkchat', '/activity/rumbletalkchat');
 
         // Return the paths wrapped into standard activity structure.
         return $this->prepare_activity_structure($paths);
@@ -53,7 +53,7 @@ class restore_rumbletalk_chat_activity_structure_step extends restore_activity_s
      *
      * @param array $data parsed element data
      */
-    protected function process_rumbletalk_chat($data) {
+    protected function process_rumbletalkchat($data) {
         global $DB;
 
         $data = (object)$data;
@@ -68,8 +68,8 @@ class restore_rumbletalk_chat_activity_structure_step extends restore_activity_s
             $data->timemodified = time();
         }
 
-        // Create the rumbletalk_chat instance.
-        $newitemid = $DB->insert_record('rumbletalk_chat', $data);
+        // Create the rumbletalkchat instance.
+        $newitemid = $DB->insert_record('rumbletalkchat', $data);
         $this->apply_activity_instance($newitemid);
     }
 
@@ -77,7 +77,7 @@ class restore_rumbletalk_chat_activity_structure_step extends restore_activity_s
      * Post-execution actions
      */
     protected function after_execute() {
-        // Add rumbletalk_chat related files, no need to match by itemname (just internally handled context).
-        $this->add_related_files('mod_rumbletalk_chat', 'intro', null);
+        // Add rumbletalkchat related files, no need to match by itemname (just internally handled context).
+        $this->add_related_files('mod_rumbletalkchat', 'intro', null);
     }
 }

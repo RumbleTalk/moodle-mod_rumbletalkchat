@@ -17,7 +17,7 @@
 /**
  * Defines the version and other meta-info about the plugin
  *
- * @package    mod_rumbletalk_chat
+ * @package    mod_rumbletalkchat
  * @copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  
@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'mod_rumbletalk_chat';
+$plugin->component = 'mod_rumbletalkchat';
 $plugin->version = 2022071500;
 $plugin->release = 'v1.1';
 $plugin->requires = 2020060900;

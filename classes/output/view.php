@@ -15,15 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Prints a particular instance of rumbletalk_chat
+ * Prints a particular instance of rumbletalkchat
  *
- * @package    mod_rumbletalk_chat
+ * @package    mod_rumbletalkchat
  * @copyright  202 Richard Jones richardnz@outlook.com
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  
  */
 
-namespace mod_rumbletalk_chat\output;
+namespace mod_rumbletalkchat\output;
 
 use renderable;
 use renderer_base;
@@ -31,21 +31,21 @@ use templatable;
 use stdClass;
 
 /**
- * rumbletalk_chat: Create a new view page renderable object
+ * rumbletalkchat: Create a new view page renderable object
  *
- * @param object simnplemod - instance of rumbletalk_chat.
+ * @param object simnplemod - instance of rumbletalkchat.
  * @param int id - course module id.
  * @copyright  2020 Richard Jones <richardnz@outlook.com>
  */
 
 class view implements renderable, templatable {
 
-    protected $rumbletalk_chat;
+    protected $rumbletalkchat;
     protected $id;
 
-    public function __construct($rumbletalk_chat, $id) {
+    public function __construct($rumbletalkchat, $id) {
 
-        $this->rumbletalk_chat = $rumbletalk_chat;
+        $this->rumbletalkchat = $rumbletalkchat;
         $this->id = $id;
     }
     /**
@@ -58,10 +58,10 @@ class view implements renderable, templatable {
 
         $data = new stdClass();
 
-        $data->title = $this->rumbletalk_chat->title;
+        $data->title = $this->rumbletalkchat->title;
         // Moodle handles processing of std intro field.
-        $data->body = format_module_intro('rumbletalk_chat',
-                $this->rumbletalk_chat, $this->id);
+        $data->body = format_module_intro('rumbletalkchat',
+                $this->rumbletalkchat, $this->id);
 
         return $data;
     }

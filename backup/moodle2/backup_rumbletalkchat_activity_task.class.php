@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines backup_rumbletalk_chat_activity_task class
+ * Defines backup_rumbletalkchat_activity_task class
  *
- * @package   mod_rumbletalk_chat
+ * @package   mod_rumbletalkchat
  * @category  backup
  * @copyright 2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,17 +25,17 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-require_once($CFG->dirroot . '/mod/rumbletalk_chat/backup/moodle2/backup_rumbletalk_chat_stepslib.php');
-require_once($CFG->dirroot . '/mod/rumbletalk_chat/backup/moodle2/backup_rumbletalk_chat_settingslib.php');
+require_once($CFG->dirroot . '/mod/rumbletalkchat/backup/moodle2/backup_rumbletalkchat_stepslib.php');
+require_once($CFG->dirroot . '/mod/rumbletalkchat/backup/moodle2/backup_rumbletalkchat_settingslib.php');
 /**
- * Provides the steps to perform one complete backup of the rumbletalk_chat instance
+ * Provides the steps to perform one complete backup of the rumbletalkchat instance
  *
- * @package   mod_rumbletalk_chat
+ * @package   mod_rumbletalkchat
  * @category  backup
  * @copyright 2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class backup_rumbletalk_chat_activity_task extends backup_activity_task {
+class backup_rumbletalkchat_activity_task extends backup_activity_task {
 
     /**
      * No specific settings for this activity
@@ -44,10 +44,10 @@ class backup_rumbletalk_chat_activity_task extends backup_activity_task {
     }
 
     /**
-     * Defines a backup step to store the instance data in the rumbletalk_chat.xml file
+     * Defines a backup step to store the instance data in the rumbletalkchat.xml file
      */
     protected function define_my_steps() {
-        $this->add_step(new backup_rumbletalk_chat_activity_structure_step('rumbletalk_chat_structure', 'rumbletalk_chat.xml'));
+        $this->add_step(new backup_rumbletalkchat_activity_structure_step('rumbletalkchat_structure', 'rumbletalkchat.xml'));
     }
 
     /**
@@ -61,13 +61,13 @@ class backup_rumbletalk_chat_activity_task extends backup_activity_task {
 
         $base = preg_quote($CFG->wwwroot, '/');
 
-        // Link to the list of rumbletalk_chats.
-        $search = '/('.$base.'\/mod\/rumbletalk_chat\/index.php\?id\=)([0-9]+)/';
-        $content = preg_replace($search, '$@rumbletalk_chatINDEX*$2@$', $content);
+        // Link to the list of rumbletalkchats.
+        $search = '/('.$base.'\/mod\/rumbletalkchat\/index.php\?id\=)([0-9]+)/';
+        $content = preg_replace($search, '$@rumbletalkchatINDEX*$2@$', $content);
 
-        // Link to rumbletalk_chat view by moduleid.
-        $search = '/('.$base.'\/mod\/rumbletalk_chat\/view.php\?id\=)([0-9]+)/';
-        $content = preg_replace($search, '$@rumbletalk_chatVIEWBYID*$2@$', $content);
+        // Link to rumbletalkchat view by moduleid.
+        $search = '/('.$base.'\/mod\/rumbletalkchat\/view.php\?id\=)([0-9]+)/';
+        $content = preg_replace($search, '$@rumbletalkchatVIEWBYID*$2@$', $content);
 
         return $content;
     }

@@ -20,7 +20,7 @@
  * This file replaces the legacy STATEMENTS section in db/install.xml,
  * lib.php/modulename_install() post installation hook and partially defaults.php.
  *
- * @package    mod_rumbletalk_chat
+ * @package    mod_rumbletalkchat
  * @copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  
@@ -31,7 +31,7 @@
  *
  * @see upgrade_plugins_modules()
  */
-function xmldb_rumbletalk_chat_install() {
+function xmldb_rumbletalkchat_install() {
 }
 
 /**
@@ -39,5 +39,5 @@ function xmldb_rumbletalk_chat_install() {
  *
  * @see upgrade_plugins_modules()
  */
-function xmldb_rumbletalk_chat_install_recovery() {
+function xmldb_rumbletalkchat_install_recovery() {
 }

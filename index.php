@@ -17,7 +17,7 @@
 /**
  * Prints a list of module instances
  *
- * @package    mod_rumbletalk_chat
+ * @package    mod_rumbletalkchat
  * @copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  
@@ -36,8 +36,8 @@ $params = array(
     'context' => context_course::instance($course->id)
 );
 
-$strname = get_string('modulenameplural', 'mod_rumbletalk_chat');
-$PAGE->set_url('/mod/rumbletalk_chat/index.php', array('id' => $id));
+$strname = get_string('modulenameplural', 'mod_rumbletalkchat');
+$PAGE->set_url('/mod/rumbletalkchat/index.php', array('id' => $id));
 $PAGE->navbar->add($strname);
 $PAGE->set_title("$course->shortname: $strname");
 $PAGE->set_heading($course->fullname);
@@ -46,8 +46,8 @@ $PAGE->set_pagelayout('incourse');
 echo $OUTPUT->header();
 echo $OUTPUT->heading($strname);
 
-if (! $rumbletalk_chats = get_all_instances_in_course('rumbletalk_chat', $course)) {
-    notice(get_string('norumbletalk_chats', 'rumbletalk_chat'), new moodle_url('/course/view.php', array('id' => $course->id)));
+if (! $rumbletalkchats = get_all_instances_in_course('rumbletalkchat', $course)) {
+    notice(get_string('norumbletalkchats', 'rumbletalkchat'), new moodle_url('/course/view.php', array('id' => $course->id)));
 }
 
 $usesections = course_format_uses_sections($course->format);
@@ -66,7 +66,7 @@ if ($usesections) {
 
 $modinfo = get_fast_modinfo($course);
 $currentsection = '';
-foreach ($modinfo->instances['rumbletalk_chat'] as $cm) {
+foreach ($modinfo->instances['rumbletalkchat'] as $cm) {
     $row = array();
     if ($usesections) {
         if ($cm->sectionnum !== $currentsection) {

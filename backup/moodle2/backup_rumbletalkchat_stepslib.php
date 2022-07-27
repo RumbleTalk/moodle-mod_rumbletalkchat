@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Define all the backup steps that will be used by the backup_rumbletalk_chat_activity_task
+ * Define all the backup steps that will be used by the backup_rumbletalkchat_activity_task
  *
- * @package   mod_rumbletalk_chat
+ * @package   mod_rumbletalkchat
  * @category  backup
  * @copyright 2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -26,15 +26,15 @@
 defined('MOODLE_INTERNAL') || die;
 
 /**
- * Define the complete rumbletalk_chat structure for backup, with file and id annotations
+ * Define the complete rumbletalkchat structure for backup, with file and id annotations
  *
- * @package   mod_rumbletalk_chat
+ * @package   mod_rumbletalkchat
  * @category  backup
  * @copyright 2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  
  */
-class backup_rumbletalk_chat_activity_structure_step extends backup_activity_structure_step {
+class backup_rumbletalkchat_activity_structure_step extends backup_activity_structure_step {
 
     /**
      * Defines the backup structure of the module
@@ -46,8 +46,8 @@ class backup_rumbletalk_chat_activity_structure_step extends backup_activity_str
         // Get know if we are including userinfo.
         $userinfo = $this->get_setting_value('userinfo');
 
-        // Define the root element describing the rumbletalk_chat instance.
-        $rumbletalk_chat = new backup_nested_element('rumbletalk_chat',
+        // Define the root element describing the rumbletalkchat instance.
+        $rumbletalkchat = new backup_nested_element('rumbletalkchat',
                 array('id'), array('course', 'name', 'intro',
                 'introformat', 'title', 'timecreated',
                 'timemodified'));
@@ -55,15 +55,15 @@ class backup_rumbletalk_chat_activity_structure_step extends backup_activity_str
         // If we had more elements, we would build the tree here.
 
         // Define data sources.
-        $rumbletalk_chat->set_source_table('rumbletalk_chat', array('id' => backup::VAR_ACTIVITYID));
+        $rumbletalkchat->set_source_table('rumbletalkchat', array('id' => backup::VAR_ACTIVITYID));
 
         // If we were referring to other tables, we would annotate the relation
         // with the element's annotate_ids() method.
 
         // Define file annotations (we do not use itemid in this example).
-        $rumbletalk_chat->annotate_files('mod_rumbletalk_chat', 'intro', null);
+        $rumbletalkchat->annotate_files('mod_rumbletalkchat', 'intro', null);
 
-        // Return the root element (rumbletalk_chat), wrapped into standard activity structure.
-        return $this->prepare_activity_structure($rumbletalk_chat);
+        // Return the root element (rumbletalkchat), wrapped into standard activity structure.
+        return $this->prepare_activity_structure($rumbletalkchat);
     }
 }
