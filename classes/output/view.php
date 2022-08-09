@@ -58,8 +58,14 @@ class view implements renderable, templatable {
 
         $data = new stdClass();
 
-        $data->title = $this->rumbletalkchat->title;
-        // Moodle handles processing of std intro field.
+        $data->name = $this->rumbletalkchat->name;
+        $data->width = $this->rumbletalkchat->width;
+        $data->height = $this->rumbletalkchat->height;
+        $data->code = $this->rumbletalkchat->code;
+
+        // Create md5 from the hashcode
+        $data->chatmd5 = md5($this->rumbletalkchat->code);
+
         $data->body = format_module_intro('rumbletalkchat',
                 $this->rumbletalkchat, $this->id);
 
