@@ -49,8 +49,8 @@ class mod_rumbletalkchat_mod_form extends moodleform_mod {
         // Adding the "general" fieldset, where all the common settings are showed.
         $mform->addElement('header', 'general', get_string('general', 'form'));
 
-        // Adding the standard "name" field.
-        $mform->addElement('text', 'name', get_string('rumbletalkchatname', 'rumbletalkchat'), array('size' => '64'));
+        // Input field for Chat Name.
+        $mform->addElement('text', 'name', get_string('generalchatname', 'rumbletalkchat'), array('size' => '64'));
         if (!empty($CFG->formatstringstriptags)) {
             $mform->setType('name', PARAM_TEXT);
         } else {
@@ -58,15 +58,32 @@ class mod_rumbletalkchat_mod_form extends moodleform_mod {
         }
         $mform->addRule('name', null, 'required', null, 'client');
         $mform->addRule('name', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
-        $mform->addHelpButton('name', 'rumbletalkchatname', 'rumbletalkchat');
+        $mform->addHelpButton('name', 'generalchatname', 'rumbletalkchat');
+        
+        // Input field for HashCode.
+        $mform->addElement('text', 'code', get_string('embed_code', 'rumbletalkchat'));
+        $mform->addRule('code', get_string('error_code_required', 'rumbletalkchat'), 'required', null, 'client');
+        $mform->addRule('code', get_string('maximumchars', '', 8), 'maxlength', 8, 'client');
+        $mform->addRule('code', get_string('minimumchars', '', 8), 'minlength', 8, 'client');
+        $mform->addHelpButton('code', 'code', 'rumbletalkchat');
+        $mform->setType('code', PARAM_TEXT);
+
+        // Input field for Width.
+        $mform->addElement('text', 'width', get_string('embed_width', 'rumbletalkchat'));
+        $mform->addRule('width', get_string('error_numbers_only', 'rumbletalkchat'), 'numeric', null, 'client');
+        $mform->addRule('width', get_string('error_width_required', 'rumbletalkchat'), 'required', null, 'client');
+        $mform->addHelpButton('width', 'width', 'rumbletalkchat');
+        $mform->setType('width', PARAM_TEXT);
+
+        // Input field for Height.
+        $mform->addElement('text', 'height', get_string('embed_height', 'rumbletalkchat'));
+        $mform->addRule('height', get_string('error_numbers_only', 'rumbletalkchat'), 'numeric', null, 'client');
+        $mform->addRule('height', get_string('error_height_required', 'rumbletalkchat'), 'required', null, 'client');
+        $mform->addHelpButton('height', 'height', 'rumbletalkchat');
+        $mform->setType('height', PARAM_TEXT);
 
         // Adding the standard "intro" and "introformat" fields.
         $this->standard_intro_elements();
-
-        // Add a specific mod_rumbletalkchat field - title.
-        $mform->addElement('text', 'title',
-                get_string('title', 'mod_rumbletalkchat'));
-        $mform->setType('title', PARAM_TEXT);
 
         // Add standard grading elements.
         $this->standard_grading_coursemodule_elements();
