@@ -15,6 +15,11 @@
         <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
         <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"/>
         <FIELD NAME="grade" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="100" SEQUENCE="false" COMMENT="The maximum grade. Can be negative to indicate the use of a scale."/>
+
+        <FIELD NAME="code" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="The chat's hash code that is used by each chat displayed."/>
+        <FIELD NAME="chatmd5" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="The translated version of hash code to md5 format of the chat."/>
+        <FIELD NAME="height" TYPE="int" LENGTH="10" NOTNULL="false" COMMENT="The height of the chat's dimension."/>
+        <FIELD NAME="width" TYPE="int" LENGTH="10" NOTNULL="false" COMMENT="The width of the chat's dimension."/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
