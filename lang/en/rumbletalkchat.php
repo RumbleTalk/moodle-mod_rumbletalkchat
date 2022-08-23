@@ -31,7 +31,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['modulename'] = 'Rumbletalk Chat';
 $string['modulenameplural'] = 'Rumbletalk Chats';
-$string['modulename_help'] = 'Use the rumbletalkchat module for... | The rumbletalkchat module allows...';
+$string['modulename_help'] = 'Create an interactive chat inside your classroom';
 $string['rumbletalkchat:addinstance'] = 'Add a new rumbletalkchat';
 $string['rumbletalkchat:submit'] = 'Submit rumbletalkchat';
 $string['rumbletalkchat:view'] = 'View rumbletalkchat';
@@ -51,11 +51,17 @@ $string['embed_height'] = 'Chat Height: ';
 $string['embed_code'] = 'Chat Hashcode: ';
 $string['code'] = 'How to get hashcode?';
 $string['code_help'] = '<p>Where is a hashcode found?</p>
-<p>You can find it at you <a href="https://cp.rumbletalk.com/login" target="_blank">Administrator panel</a>(https://cp.rumbletalk.com/login) at RumbleTalk.</p>';
+<p>You can find it at you <a href="https://cp.rumbletalk.com/login" target="_blank">Administrator panel</a>(https://cp.rumbletalk.com/login) at RumbleTalk.</p>
+<p>It is represented by an 8 characters code.</p>';
 $string['width'] = 'What is Chat Width?';
 $string['height'] = 'What is Chat Height?';
 $string['width_help'] = '<p>Chat\'s Width is based on pixels(px).</p><p>Please enter numbers only.</p>';
 $string['height_help'] = '<p>Chat\'s Height is based on pixels(px).</p><p>Please enter numbers only.</p>';
+$string['members'] = 'Read instructions first, before checking the box.';
+$string['members_help'] = '<p>Before checking the box, check this link:</p>
+<p><a href="https://rumbletalk.com/blog/index.php/knowledge-base/how-to-make-a-members-only-chat-in-a-moodle-page/" target="_blank">Members Only</a></p>';
+$string['login_type'] = 'Login Type: ';
+$string['members_only'] = 'Members Only';
 
 // Error Strings.
 $string['error_email_required'] = 'Please enter an email.';

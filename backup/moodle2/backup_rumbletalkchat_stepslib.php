@@ -48,9 +48,7 @@ class backup_rumbletalkchat_activity_structure_step extends backup_activity_stru
 
         // Define the root element describing the rumbletalkchat instance.
         $rumbletalkchat = new backup_nested_element('rumbletalkchat',
-                array('id'), array('course', 'name', 'intro',
-                'introformat', 'title', 'timecreated',
-                'timemodified'));
+                array('id'), array('course', 'name', 'intro','introformat', 'title', 'code', 'height', 'width', 'members', 'username', 'userimage', 'timecreated', 'timemodified'));
 
         // If we had more elements, we would build the tree here.
 

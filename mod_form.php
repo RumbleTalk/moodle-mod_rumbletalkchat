@@ -82,6 +82,10 @@ class mod_rumbletalkchat_mod_form extends moodleform_mod {
         $mform->addHelpButton('height', 'height', 'rumbletalkchat');
         $mform->setType('height', PARAM_TEXT);
 
+        // Checkbox for Members Only.
+        $mform->addElement('advcheckbox', 'members', get_string('login_type', 'rumbletalkchat'), get_string('members_only', 'rumbletalkchat'), array('group' => 1), array(0, 1));
+        $mform->addHelpButton('members', 'members', 'rumbletalkchat');
+
         // Adding the standard "intro" and "introformat" fields.
         $this->standard_intro_elements();
 

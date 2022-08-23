@@ -24,6 +24,7 @@
 
 use mod_rumbletalkchat\output\view;
 require_once('../../config.php');
+global $USER;
 
 // We need the course module id (id) or
 // the rumbletalkchat instance id (n).
@@ -59,6 +60,16 @@ $PAGE->set_heading(format_string($course->fullname));
 if (!$rumbletalkchat->intro) {
     $rumbletalkchat->intro = '';
 }
+
+// Check current user
+if (!$rumbletalkchat->username) {
+    $userpicture = new user_picture($USER);
+    $url = $userpicture->get_url($PAGE);
+
+    $rumbletalkchat->username = $USER->username;
+    $rumbletalkchat->userimage = $url;
+}
+
 // Start output to browser.
 echo $OUTPUT->header();
 

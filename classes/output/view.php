@@ -33,7 +33,7 @@ use stdClass;
 /**
  * rumbletalkchat: Create a new view page renderable object
  *
- * @param object simnplemod - instance of rumbletalkchat.
+ * @param object rumbletalkchatmod - instance of rumbletalkchat.
  * @param int id - course module id.
  * @copyright  2020 Richard Jones <richardnz@outlook.com>
  */
@@ -56,15 +56,25 @@ class view implements renderable, templatable {
      */
     public function export_for_template(renderer_base $output) {
 
+        global $USER,$PAGE;
+
+        $userpicture = new \user_picture($USER);
+        $url = $userpicture->get_url($PAGE);
+
         $data = new stdClass();
 
         $data->name = $this->rumbletalkchat->name;
         $data->width = $this->rumbletalkchat->width;
         $data->height = $this->rumbletalkchat->height;
         $data->code = $this->rumbletalkchat->code;
+        $data->members = $this->rumbletalkchat->members;
 
         // Create md5 from the hashcode
         $data->chatmd5 = md5($this->rumbletalkchat->code);
+
+        // User Details for Members login
+        $data->username = $USER->username;
+        $data->userimage = $url;
 
         $data->body = format_module_intro('rumbletalkchat',
                 $this->rumbletalkchat, $this->id);
