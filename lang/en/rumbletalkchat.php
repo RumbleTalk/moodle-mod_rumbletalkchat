@@ -70,8 +70,11 @@ $string['error_password_required'] = 'Please enter a password.';
 $string['error_password_regex'] = 'Please enter a valid password.';
 $string['error_numbers_only'] = 'Please enter numbers only';
 $string['error_code_required'] = 'Please enter a hashcode';
+$string['error_code_chars'] = 'Exactly 8 characters of hashcode';
 $string['error_height_required'] = 'Please enter a height';
+$string['error_height_range'] = 'Please enter a height ranging from 500 - 800 only';
 $string['error_width_required'] = 'Please enter a width';
+$string['error_width_range'] = 'Please enter a width ranging from 800 - 1000 only';
 
 // Mod form specific rumbletalkchat settings.
 $string['title'] = 'Activity Title: ';
