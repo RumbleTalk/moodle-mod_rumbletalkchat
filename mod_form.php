@@ -72,7 +72,8 @@ class mod_rumbletalkchat_mod_form extends moodleform_mod {
         $mform->addElement('text', 'width', get_string('embed_width', 'rumbletalkchat'));
         $mform->addRule('width', get_string('error_numbers_only', 'rumbletalkchat'), 'numeric', null, 'client');
         $mform->addRule('width', get_string('error_width_required', 'rumbletalkchat'), 'required', null, 'client');
-        $mform->addRule('width', get_string('error_width_range', 'rumbletalkchat'), 'rangelength', array(800, 1000), 'client');
+        // Width Range: 800 - 1000.
+        $mform->addRule('width', get_string('error_width_range', 'rumbletalkchat'), 'regex', '/^([8-9][0-9][0-9])?$|^1000$/', 'client');
         $mform->addHelpButton('width', 'width', 'rumbletalkchat');
         $mform->setType('width', PARAM_TEXT);
 
@@ -80,7 +81,8 @@ class mod_rumbletalkchat_mod_form extends moodleform_mod {
         $mform->addElement('text', 'height', get_string('embed_height', 'rumbletalkchat'));
         $mform->addRule('height', get_string('error_numbers_only', 'rumbletalkchat'), 'numeric', null, 'client');
         $mform->addRule('height', get_string('error_height_required', 'rumbletalkchat'), 'required', null, 'client');
-        $mform->addRule('height', get_string('error_height_range', 'rumbletalkchat'), 'rangelength', array(500, 800), 'client');
+        // Height Range: 500 - 800.
+        $mform->addRule('height', get_string('error_height_range', 'rumbletalkchat'), 'regex', '/^([5-7][0-9][0-9])?$|^800$/', 'client');
         $mform->addHelpButton('height', 'height', 'rumbletalkchat');
         $mform->setType('height', PARAM_TEXT);
 
