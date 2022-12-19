@@ -22,7 +22,6 @@
  * @copyright 2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die;
 
 /**
@@ -32,7 +31,6 @@ defined('MOODLE_INTERNAL') || die;
  * @category  backup
  * @copyright 2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- 
  */
 class backup_rumbletalkchat_activity_structure_step extends backup_activity_structure_step {
 
@@ -48,7 +46,7 @@ class backup_rumbletalkchat_activity_structure_step extends backup_activity_stru
 
         // Define the root element describing the rumbletalkchat instance.
         $rumbletalkchat = new backup_nested_element('rumbletalkchat',
-                array('id'), array('course', 'name', 'intro','introformat', 'title', 'code', 'height', 'width', 'members', 'username', 'userimage', 'timecreated', 'timemodified'));
+                array('id'), array('course', 'name', 'intro', 'introformat', 'title', 'code', 'height', 'width', 'members', 'username', 'userimage', 'timecreated', 'timemodified'));
 
         // If we had more elements, we would build the tree here.
 

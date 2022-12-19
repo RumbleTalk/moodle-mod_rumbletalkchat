@@ -21,7 +21,6 @@
  * @category  backup
  * @copyright 2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- 
  */
 
 defined('MOODLE_INTERNAL') || die();

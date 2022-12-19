@@ -20,7 +20,6 @@
  * @package    mod_rumbletalkchat
  * @copyright  202 Richard Jones richardnz@outlook.com
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- 
  */
 
 namespace mod_rumbletalkchat\output;
@@ -56,7 +55,7 @@ class view implements renderable, templatable {
      */
     public function export_for_template(renderer_base $output) {
 
-        global $USER,$PAGE;
+        global $USER, $PAGE;
 
         $userpicture = new \user_picture($USER);
         $url = $userpicture->get_url($PAGE);

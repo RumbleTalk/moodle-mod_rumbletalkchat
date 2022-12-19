@@ -123,11 +123,6 @@ function rumbletalkchat_refresh_events($courseid = 0) {
         }
     }
 
-    foreach ($rumbletalkchats as $rumbletalkchat) {
-        // Create a function such as the one below to deal with updating calendar events.
-        // rumbletalkchat_update_events($rumbletalkchat);
-    }
-
     return true;
 }
 

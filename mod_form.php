@@ -59,7 +59,6 @@ class mod_rumbletalkchat_mod_form extends moodleform_mod {
         $mform->addRule('name', null, 'required', null, 'client');
         $mform->addRule('name', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
         $mform->addHelpButton('name', 'generalchatname', 'rumbletalkchat');
-        
         // Input field for HashCode.
         $mform->addElement('text', 'code', get_string('embed_code', 'rumbletalkchat'));
         $mform->addRule('code', get_string('error_code_required', 'rumbletalkchat'), 'required', null, 'client');
