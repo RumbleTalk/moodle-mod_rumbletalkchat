@@ -1,91 +1,86 @@
-A template for Moodle modules.  Updated from Moodle HQ's moodle-mod_rumbletalkchat template.
+RumbleTalk
 
-Added:
+RumbleTalk Group Chat is a chat block plugin which allows you to embed a chat in your Moodle page. 
 
- - Mustache template
- - Working backup/restore functionality for Moodle2
- - No grades or events implemented
+The chat is free for a limited number of seats, you must have a paid subscription to be able to use the advanced features and extra seats.
 
-Instructions for installing:
-============================
+It is the most customizable HTML5 group chat. A site owner can choose their own chat theme from a variety of ready made themes and even create their own theme. It is the fastest way to add a unique fully functional chatroom to any blog or website.
 
-Download the zip file or clone the repository into your moodle/mod folder using the instructions given under the button "Clone or download".
+@package    mod_rumbletalkchat
+@copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com}
+@license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 
-Assuming you are going to change your module name from rumbletalkchat to something more relevant, do the following.
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Rename these files:
-===================
-All 4 files in backup/moodle2 should have the name of your new module.
+== Installation ==
 
-The lang/en/rumbletalkchat.php file should be renamed to the name of your new module.
+First, Install the Plugin:
 
-Replace rumbletalkchat with your new module name
-========================================
-Carry out a search and replace for "rumbletalkchat" replacing it with the name of your new module.  You can do this in a number of ways depending on your text editor.  If you don't have one handy, download Brackets (http://brackets.io/) which is free, open source and handles this stuff well.
+    * via Moodle plugins directory *
 
-Navigate to your admin dashboard and install the new module.
+        1.  Login as Admin at your Moodle Website
+        2.  Go to "Site Administration" -> "Plugins" -> "Install Plugins" (If you can't find this location, then plugin installation is prevented on your site.)
+        3.  Click the button 'Install plugins from Moodle plugins directory'.
+        4.  Search for "RumbleTalk"
+        5.  Click the title of "RumbleTalk" and click the Install button
+        6.  Confirm the installation request
+        7.  Check the plugin validation report by clicking "Continue" button.
 
-For newbie users
-================
-You may notice a reference to a local class debugging.  This is a simple script that allows you to output debugging information to file.
+    * via uploaded ZIP file *
 
-It looks like this"
+        1.  Go to Moodle plugins directory(https://moodle.org/plugins)
+        2.  Search for "RumbleTalk" and open the "RumbleTalk" plugin and click "Download" button
+            This will download the ZIP file of RumbleTalk
+        3.  Login as Admin at your Moodle Website
+        4.  Go to "Site Administration" -> "Plugins" -> "Install Plugins" 
+        5.  Upload the RumbleTalk ZIP file
+        6.  Click the "Install plugin from the ZIP File"
+        7.  Confirm the installation request
+        8.  Check the plugin validation report by clicking "Continue" button
 
-<pre>
-namespace mod_rumbletalkchat\local;
+Second, Get your chat code:
 
-class debugging {
-    public static function logit($message, $value) {
+    1.  You must first login to your RumbleTalk Administator Panel,
+    https://cp.rumbletalk.com/login.
+    2.  Then copy the hash code found on the bottom of your chat inside the Administrator Panel.
 
-        $file = fopen('mylog.log', 'a');
 
-        if ($file) {
-            fwrite($file, print_r($message, true));
-            fwrite($file, print_r($value, true));
-            fwrite($file, "\n");
-            fclose($file);
-        }
-    }
-}
-</pre>
+Inserting RumbleTalk Chat mod:
 
-Place the above code in a file called debugging.php.
+    - Homepage -
+        1.  Click "Settings" (represented by gear icon)
+        2.  Under "Settings", select "Turn editing on".
+        3.  Open Menu (represented by 3 stacked lines 
+        located at the Upper Left of the screen).
+        4.  Open "Add an activity or resource"
+        5.  A pop-up window will appear, click "RumbleTalk" option.
 
-Modify the file location (mylog.log) if desired.  Anywhere you want to view the contents of an object use:
-<pre>
-\mod_rumbletalkchat\local\debugging::logit("What is in a widegt: ", $rumbletalkchat);
-</pre>
+    - Other Pages -
+        1.  Click "Customise this page"
+        2.  Open Menu (represented by 3 stacked lines 
+            located at the Upper Left of the screen).
+        3.  Open "Add an activity or resource"
+        4.  A pop-up window will appear, click "RumbleTalk" option.
 
-Using Xdebug
-============
-Brackets, Sublime, PHP Storm and many other editors or IDEs use this.  If you are using Linux, there's plenty of info to google.
+Last, use your hash code to embed a chat.
 
-Windows users
-=============
-Whether by choice or not, many people are stuck with MS.  Xampp is a workable development environment.  Install the basic Xampp rather than the Moodle/Xampp package.  Install Moodle under htdocs and change the existing index file if desired.
+    1.  Open "RumbleTalk" mod activity.
+    2.  Click the "RumbleTalk" settings tab, and enter the hashcode of your chat
+    3.  Click the button "Save and return to course" or "Save and display" once your done 
 
-Also install, at minumum, Git for Windows (even if you don't use it - and you should - you can use the git bash command line for many tasks).
+Trouble shooting:
 
-This is further described in the free course: MoodleBites for TechPrep
-https://www.moodlebites.com/enrol/index.php?id=228
+    1.  If you see "There is no chat available." message
+    2.  Click the "RumbleTalk" settings tab, and enter the hashcode of your chat
+        Make sure that the hashcode is an 8 characters.
+    3. Click the button "Save and return to course" or "Save and display" once your done
 
-This article is helpful for installing xdebug on xampp:
-https://gist.github.com/odan/1abe76d373a9cbb15bed
 
-Changes
-=======
-1.1 - 27/08/20 - MINOR change to rendering
-Put the renderer function code into classes/output/view.php
-Called the template by the same name and now use the core renderer to display the page content.
-Removed the renderer.php file.
+Uninstall:
 
-Further information
-===================
-Have fun developing for Moodle.  This activity module is an
-example from MoodleBites for Developers level 2.
-
-https://www.moodlebites.com/mod/page/view.php?id=19542
-
-Richard Jones, richardnz@outlook.com
-Pirongia, NZ
-August 27th, 2020.
+    1.  Go to "Site Administration" -> "Plugins" -> "Plugins Overview"
+    2.  Select the "Additional plugins" tab
+    3.  Click "Uninstall" in the RumbleTalk row
+    4.  Click "Continue" to confirm the process
+    5. After that you should see success message and click "Continue"
