@@ -40,11 +40,13 @@ $string['pluginadministration'] = 'rumbletalkchat administration';
 $string['pluginname'] = 'rumbletalkchat';
 $string['norumbletalkchats'] = 'No instances';
 
-// General Settings Strings
+// General Settings Strings.
 $string['generalchatname'] = 'Chat name: ';
 $string['generalchatname_help'] = 'This will be used to display the name of your chat.';
+// Welcome Message.
+$string['welcome_message'] = '<div class="welcome-message"><p>Welcome to the RumbleTalk integrated chat platform for Moodle. Please create an account at <a href="https://rumbletalk.com" target="_blank">RumbleTalk</a>, then get your chat hash code from the admin panel.</p>
+<p>Please see <a href="https://rumbletalk.com/blog/index.php/knowledge-base/how-to-make-a-members-only-chat-in-a-moodle-page/" target="_blank">instructions</a> on how to integrate it with your users base</p></div>';
 // Chat: Embed Strings (mod_form.php).
-$string['embed_chat'] = 'Embed a Chat';
 $string['embed_width'] = 'Chat Width: ';
 $string['embed_height'] = 'Chat Height: ';
 $string['embed_code'] = 'Chat Hashcode: ';
@@ -57,10 +59,15 @@ $string['height'] = 'What is Chat Height?';
 $string['width_help'] = '<p>Chat\'s Width is based on pixels(px).</p><p>Please enter numbers only.</p>';
 $string['height_help'] = '<p>Chat\'s Height is based on pixels(px).</p><p>Please enter numbers only.</p>';
 $string['members'] = 'Read instructions first, before checking the box.';
-$string['members_help'] = '<p>Before checking the box, check this link:</p>
-<p><a href="https://rumbletalk.com/blog/index.php/knowledge-base/how-to-make-a-members-only-chat-in-a-moodle-page/" target="_blank">Members Only</a></p>';
+$string['members_help'] = '<p>This will allow Moodle users to automatedly login with their user name and avatar.</p>
+<p>Please refer to this <a href="https://rumbletalk.com/blog/index.php/knowledge-base/how-to-make-a-members-only-chat-in-a-moodle-page/" target="_blank">link</a> for additional information.</p>';
 $string['login_type'] = 'Login Type: ';
 $string['members_only'] = 'Members Only';
+
+// Default values.
+$string['default_chat_name'] = 'Moodle Chat';
+$string['default_width'] = '600';
+$string['default_height'] = '400';
 
 // Error Strings.
 $string['error_email_required'] = 'Please enter an email.';
@@ -71,9 +78,9 @@ $string['error_numbers_only'] = 'Please enter numbers only';
 $string['error_code_required'] = 'Please enter a hashcode';
 $string['error_code_chars'] = 'Exactly 8 characters of hashcode';
 $string['error_height_required'] = 'Please enter a height';
-$string['error_height_range'] = 'Please enter a height ranging from 500 - 800 only';
+$string['error_height_range'] = 'Please enter a height ranging from 400 - 800 only';
 $string['error_width_required'] = 'Please enter a width';
-$string['error_width_range'] = 'Please enter a width ranging from 800 - 1000 only';
+$string['error_width_range'] = 'Please enter a width ranging from 600 - 1000 only';
 
 // Mod form specific rumbletalkchat settings.
 $string['title'] = 'Activity Title: ';
