@@ -1,6 +1,6 @@
 RumbleTalk
 
-RumbleTalk Group Chat is a chat block plugin which allows you to embed a chat in your Moodle page. 
+RumbleTalk Group Chat is a chat modular plugin which allows you to embed a chat in your Moodle page. 
 
 The chat is free for a limited number of seats, you must have a paid subscription to be able to use the advanced features and extra seats.
 
