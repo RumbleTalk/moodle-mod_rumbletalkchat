@@ -15,7 +15,6 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Prints a particular instance of rumbletalkchat
  *
  * @package    mod_rumbletalkchat
  * @copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
@@ -28,14 +27,6 @@ use renderable;
 use renderer_base;
 use templatable;
 use stdClass;
-
-/**
- * rumbletalkchat: Create a new view page renderable object
- *
- * @param object rumbletalkchatmod - instance of rumbletalkchat.
- * @param int id - course module id.
- * @copyright  2020 Richard Jones <richardnz@outlook.com>
- */
 
 class view implements renderable, templatable {
 
