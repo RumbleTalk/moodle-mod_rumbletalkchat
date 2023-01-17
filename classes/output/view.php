@@ -18,7 +18,7 @@
  * Prints a particular instance of rumbletalkchat
  *
  * @package    mod_rumbletalkchat
- * @copyright  202 Richard Jones richardnz@outlook.com
+ * @copyright  2022 RumbleTalk, LTD {@link https://www.rumbletalk.com/}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
