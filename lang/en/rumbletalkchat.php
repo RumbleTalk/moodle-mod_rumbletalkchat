@@ -84,3 +84,9 @@ $string['error_width_range'] = 'Please enter a width ranging from 600 - 1000 onl
 
 // Mod form specific rumbletalkchat settings.
 $string['title'] = 'Activity Title: ';
+
+// Privacy Strings.
+$string['privacy:metadata:rumbletalk_client'] = 'In order to integrate with a RumbleTalk service, user data needs to be exchanged with the RumbleTalk service.
+For more information, you can visit our RumbleTalk Privacy and GDRP, https://rumbletalk.com/about_us/privacy_policy/.';
+$string['privacy:metadata:rumbletalk_client:email'] = 'The user\'s email must be sent from Moodle to allow RumbleTalk to determine a user account.';
+$string['privacy:metadata:rumbletalk_client:username'] = 'The username is sent to RumbleTalk service to provide a better user experience inside the chat.';
