@@ -27,5 +27,5 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'mod_rumbletalkchat';
 $plugin->version = 2024051600;
 $plugin->release = 'v1.2.2';
-$plugin->requires = 2020060900;
+$plugin->requires = 2022041912;
 $plugin->maturity = MATURITY_STABLE;
